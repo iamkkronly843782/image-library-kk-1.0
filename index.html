@@ -27,6 +27,7 @@
       width: 95%;
       max-width: 400px;
       height: auto;
+      margin-bottom: 15px;
     }
 
     footer {
@@ -45,40 +46,36 @@
   <hr>
 
   <!-- Scrollable container -->
-  <div class="scroll-container">
-    <div>
-      <img src="https://i.ibb.co/gbthGgmR/20241121-174902.png" alt="Image 1">
-    </div>
-    <br>
-    <div>
-      <img src="https://i.ibb.co/tPN3L2Tc/downloadfile-1.jpg" alt="Image 2">
-    </div>
-    <br>
-    <div>
-      <img src="https://via.placeholder.com/400x240" alt="Image 3">
-    </div>
-    <br>
-    <div>
-      <img src="https://via.placeholder.com/400x240" alt="Image 4">
-    </div>
-    <br>
-    <div>
-      <img src="https://via.placeholder.com/400x240" alt="Image 5">
-    </div>
-    <br>
-    <div>
-      <img src="https://via.placeholder.com/400x240" alt="Image 6">
-    </div>
-    <br>
-    <div>
-      <img src="https://i.ibb.co/tPN3L2Tc/downloadfile-1.jpg" alt="Image 7">
-    </div>
+  <div class="scroll-container" id="imageContainer">
+    <!-- Images will be loaded here dynamically -->
   </div>
 
   <hr>
   <footer>
     <p>&copy; 2025 My Image Library. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Add new image links to this array in the future
+    const imageLinks = [
+      "https://i.ibb.co/gbthGgmR/20241121-174902.png",
+      "https://i.ibb.co/tPN3L2Tc/downloadfile-1.jpg",
+      "https://via.placeholder.com/400x240",
+      "https://via.placeholder.com/400x240",
+      "https://via.placeholder.com/400x240",
+      "https://via.placeholder.com/400x240",
+      "https://i.ibb.co/tPN3L2Tc/downloadfile-1.jpg"
+    ];
+
+    const container = document.getElementById("imageContainer");
+
+    imageLinks.forEach(link => {
+      const img = document.createElement("img");
+      img.src = link;
+      img.alt = "Image";
+      container.appendChild(img);
+    });
+  </script>
 
 </body>
 </html>
